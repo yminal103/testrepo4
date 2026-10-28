@@ -13,8 +13,13 @@ jobs:
             - name: checkout code / download code
               uses: actions/checkout@v7
 
-            - name: run validate employee
-              run: python validate_employee.py
+            - name: run read program
+              env: 
+                USERNAME_ENV: ${{secrets.USERNAME}}
+                PASSWORD_ENV: ${{secrets.PASSWORD}}
+              run: read.py
 
-            - name: move data to target
-              run: echo 'move data'
+            # - name: move data to target
+            #   run: echo 'move data'
+
+
