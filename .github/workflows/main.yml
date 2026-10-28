@@ -1,1 +1,20 @@
+name: csv file validator
 
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    validate-file:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout code / download code
+              uses: actions/checkout@v7
+
+            - name: run validate employee
+              run: python validate_employee.py
+
+            - name: move data to target
+              run: echo 'move data'
